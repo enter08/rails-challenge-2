@@ -1,0 +1,39 @@
+<h1> Inactive Stories </h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Username</th>
+      <th>Title</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody style="background-color: #FFDD44;">
+    <% if @stories_a %>
+    <% @stories_i.each do |story| %>
+
+    <tr>
+      <td><%= story.user.username %></td>
+      <td><%= link_to story.url, story.title %></td>
+      <td></td>
+      <td><%= form_for(story) do |f| %>
+      <%= f.label :active, "Active"%>
+      <%= f.check_box :active %>
+      <%= f.submit %>
+      <% end %></td>
+    </tr>
+    <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<br/>
+
+<%= link_to 'New Story', new_story_path %>

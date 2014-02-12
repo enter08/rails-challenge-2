@@ -1,0 +1,36 @@
+<h1> Commented Stories </h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Username</th>
+      <th>Title</th>
+      <th>Number of comments</th>
+      <th>Date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody style="background-color: #00FF00;">
+    
+    <% @comments.each do |comment| %>
+
+    <tr>
+      <td><%= comment.user.username %></td>
+      <td> <%= link_to comment.story.url, comment.story.title %> </td>
+      <td> 
+        <%= comment.comment %>
+      </td>
+      <td> 
+        <%= comment.created_at %>
+      </td>
+    </tr>
+     <% end %>
+  </tbody>
+</table>
+
+<br/>

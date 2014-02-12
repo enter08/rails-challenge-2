@@ -1,0 +1,36 @@
+<h1> Active Stories </h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Username</th>
+      <th>Title</th>
+      <th>Number of comments</th>
+      <th>Date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody style="background-color: #FFFF00;">
+    <% if @stories_a %>
+    <% @stories_a.each do |story| %>
+
+    <tr>
+      <td><%= story.user.username %></td>
+      <td> <%= link_to story.url, story.title %> </td>
+      <td> <%= story.comments.size %> </td>
+      <td> <%= story.created_at %> </td>
+      <td><%= link_to 'Show', story %></td>
+      <td><%= link_to 'Edit', edit_story_path(story) %></td>
+      <td><%= link_to 'Destroy', story, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+    <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<br/>
