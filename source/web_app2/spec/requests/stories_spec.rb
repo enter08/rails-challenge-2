@@ -19,7 +19,7 @@ describe "stories test" do
       Story.create!(user_id: 3, active: true, url: "https://stories.com/mystory #{rand(2131)}", title: "My Story#{rand(2131)}", description: "This is a great story. #{rand(2131)}")
     end
 
-      Story.create!(user_id: 1, active: false, url: "https://stories.com/mystory #{rand(2131)}", title: "My Story#{rand(2131)}", description: "This is a great story. #{rand(2131)}")
+    Story.create!(user_id: 1, active: false, url: "https://stories.com/mystory #{rand(2131)}", title: "My Story#{rand(2131)}", description: "This is a great story. #{rand(2131)}")
 
     2.times do |n|
       Story.create!(user_id: 2, active: false, url: "https://stories.com/mystory #{rand(2131)}", title: "My Story#{rand(2131)}", description: "This is a great story. #{rand(2131)}")
@@ -38,13 +38,13 @@ describe "stories test" do
           k = 4
         when 2
           k = 6
-    end
+      end
 
       Comment.create!(story_id: k, user_id: 2, comment: "This is a comment.")
       Comment.create!(story_id: k+1, user_id: 1, comment: "This is another comment.")
       Comment.create!(story_id: k+1, user_id: 3, comment: "This is a comment too.")
+    end
   end
-end
 
   describe "The user show page" do
 
@@ -67,7 +67,7 @@ end
       before do
        check('Active') 
        @t = Story.where(active: false)
-     end
+      end
       it "should check The Checkbox" do
         expect { click_button "Update Story"}.to change(@t, :count).by(-1)
       end
