@@ -29,20 +29,20 @@ describe "stories test" do
       Story.create!(user_id: 3, active: false, url: "https://stories.com/mystory #{rand(2131)}", title: "My Story#{rand(2131)}", description: "This is a great story. #{rand(2131)}")
     end 
 
-  k=0
-  3.times do |n|
-  case n
-  when 0
-    k = 1
-  when 1
-    k = 4
-  when 2
-    k = 6
-  end
+    k=0
+    3.times do |n|
+      case n
+        when 0
+          k = 1
+        when 1
+          k = 4
+        when 2
+          k = 6
+    end
 
-  Comment.create!(story_id: k, user_id: 2, comment: "This is a comment.")
-  Comment.create!(story_id: k+1, user_id: 1, comment: "This is another comment.")
-  Comment.create!(story_id: k+1, user_id: 3, comment: "This is a comment too.")
+      Comment.create!(story_id: k, user_id: 2, comment: "This is a comment.")
+      Comment.create!(story_id: k+1, user_id: 1, comment: "This is another comment.")
+      Comment.create!(story_id: k+1, user_id: 3, comment: "This is a comment too.")
   end
 end
 
