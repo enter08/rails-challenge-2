@@ -1,8 +1,8 @@
 <% if @comments_this %>
-<p>
-  <% @story.comments.each do |comment| %>
-  	<%=	comment.comment %>
-  	<br>
-  <% end %>
-</p>
+	<p>
+  		<% @story.comments.each do |comment| %>
+  			<%=	comment.comment %>
+  			<br/>
+		<% end %>
+	</p>
 <% end %>

@@ -16,20 +16,14 @@
   </thead>
 
   <tbody style="background-color: #00FF00;">
-    
     <% @comments.each do |comment| %>
-
     <tr>
       <td><%= comment.user.username %></td>
-      <td> <%= link_to comment.story.url, comment.story.title %> </td>
-      <td> 
-        <%= comment.comment %>
-      </td>
-      <td> 
-        <%= comment.created_at %>
-      </td>
+      <td><%= link_to comment.story.url, comment.story.title %> </td>
+      <td><%= comment.comment %></td>
+      <td><%= comment.created_at %></td>
     </tr>
-     <% end %>
+    <% end %>
   </tbody>
 </table>
 

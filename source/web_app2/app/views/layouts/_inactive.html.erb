@@ -25,9 +25,9 @@
       <td></td>
       <td>
         <%= form_for(story) do |f| %>
-        <%= f.label :active, "Active"%>
-        <%= f.check_box :active %>
-        <%= f.submit %>
+          <%= f.label :active, "Active#{story.id}"%>
+          <%= f.check_box :active, {:id => "mycheckbox-#{story.id}"} %>
+          <%= f.submit "Active#{story.id}" %>
         <% end %>
       </td>
     </tr>
