@@ -22,7 +22,6 @@ FactoryGirl.define do
 	end
 
 	factory :story do
-		user_id 1
 		active true
 		sequence :url do |n|
 			"https://stories.com/mystory#{rand(3242)}"
@@ -33,13 +32,19 @@ FactoryGirl.define do
 		sequence :description do |n|
 			"This is a story. #{n}"
 		end
+
+		factory :inactive_story do
+			active false
+		end
+		
+		user
 	end
 
 	factory :comment do
-		story_id 1
-		user_id 1
 		sequence :comment do |n|
 			"This is my comment. #{n}"
 		end
+		story
+		user
 	end
 end
